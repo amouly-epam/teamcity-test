@@ -41,4 +41,8 @@ project {
 
 object BuildPr : BuildType({
     name = "build-pr"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
 })
