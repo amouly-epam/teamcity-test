@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildFeatures.dockerSupport
 import jetbrains.buildServer.configs.kotlin.projectFeatures.githubConnection
 
 /*
@@ -44,5 +45,11 @@ object BuildPr : BuildType({
 
     vcs {
         root(DslContext.settingsRoot)
+    }
+
+    features {
+        dockerSupport {
+            cleanupPushedImages = true
+        }
     }
 })
